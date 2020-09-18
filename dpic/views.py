@@ -17,7 +17,7 @@ from os import listdir
 from os.path import isfile, join
 
 def home(request):
-    return HttpResponse("Instagram profile picture download website from api");
+    return render(request,"index.html");
 
 
 @api_view(['GET', 'POST'])

@@ -24,14 +24,14 @@ def home(request):
 def addsome(request):
     if request.method == 'GET':
         print('get method')
-        user_name = Instapic.objects.all()
-        serializer= InstapicSerializer(user_name, many=True)
+        # user_name = Instapic.objects.all()
+        # serializer= InstapicSerializer(user_name, many=True)
         # shutil.rmtree('/ramesh__878')
         # dirpath='pics/ramesh__878pics/*.jpg'
         # mediapath = settings. MEDIA_ROOT+'/ramesh__878pics/'
         # myfiles = [ f for f in listdir(mediapath) if isfile(join(mediapath, f))]
         # print(myfiles[0])
-        return Response(serializer.data, status=200)
+        return Response(status=200)
             
 
     if request.method == 'POST':
@@ -44,7 +44,6 @@ def addsome(request):
             user_name = data['pic_user_name']
             pr=root.download_profile(user_name,profile_pic_only=True)
             print(pr)
-            serializer.save()
             mediapath = settings.MEDIA_ROOT+'/'+data['pic_user_name']+'/'
             myfiles = [ f for f in listdir(mediapath) if isfile(join(mediapath, f))]
             print(myfiles[0])

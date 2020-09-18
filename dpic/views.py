@@ -2,9 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 import instaloader
-import shutil
-import cv2
-import glob
+# import shutil
+# import cv2
+# import glob
 from django.conf import settings
 from .models import Instapic
 from .serializers import InstapicSerializer

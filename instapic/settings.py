@@ -60,7 +60,7 @@ ROOT_URLCONF = 'instapic.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'webapp/build'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,7 +126,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'pics')
+    os.path.join(BASE_DIR, 'webapp/build/static'),   
 ]
 
 MEDIA_URL = '/pics/'

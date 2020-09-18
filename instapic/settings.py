@@ -60,7 +60,7 @@ ROOT_URLCONF = 'instapic.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'pics'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

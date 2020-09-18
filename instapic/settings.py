@@ -129,8 +129,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'webapp/build/static'),   
 ]
 
-MEDIA_URL = '/pics/'
 MEDIA_ROOT=os.path.join(BASE_DIR, 'pics')
+MEDIA_URL = '/pics/'
 
 CORS_ORIGIN_ALLOW_ALL = True
 

@@ -3,6 +3,7 @@ from django.http import HttpResponse
 
 import instaloader
 import shutil
+import time
 # import cv2
 # import glob
 from django.conf import settings
@@ -60,6 +61,7 @@ def addsome(request):
                 print('wrong username')
             else:
                 print('correct username')
+            time.sleep(10)
             if valid==1:
                 mediapath = settings.MEDIA_ROOT+'/'+data['pic_user_name']+'/'
                 myfiles = [ f for f in listdir(mediapath) if isfile(join(mediapath, f))]

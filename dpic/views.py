@@ -77,4 +77,4 @@ def addsome(request):
                 return Response("wrong")
         else:
             return Response('null')
-        return Response(serializer.errors, status=200)
+        return Response("wrong")

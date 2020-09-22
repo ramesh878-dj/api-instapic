@@ -57,6 +57,12 @@ def addsome(request):
                 valid=1
             except:
                 print("Username is wrong")
+            delete_id_file= 'pics/'+data['pic_user_name']+'/'+data['pic_user_name']+"_id"
+            try:
+                shutil.rmtree(delete_id_file)
+                print('Delete id file')
+            except:
+                print("Error when delete id file")
             if pr =='':
                 print('wrong username')
             else:
@@ -65,8 +71,12 @@ def addsome(request):
             if valid==1:
                 mediapath = settings.MEDIA_ROOT+'/'+data['pic_user_name']+'/'
                 myfiles = [ f for f in listdir(mediapath) if isfile(join(mediapath, f))]
-                print(myfiles[0])
-                user_img= '/pics/'+data['pic_user_name']+'/'+myfiles[0]
+                totl=len(myfiles[0])
+                user_img=''
+                if totl>35:
+                    user_img= '/pics/'+data['pic_user_name']+'/'+myfiles[0]
+                else:
+                    user_img= '/pics/'+data['pic_user_name']+'/'+myfiles[1]
                 return Response(user_img)
             else:
                 return Response("wrong")

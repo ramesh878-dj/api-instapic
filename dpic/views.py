@@ -57,12 +57,7 @@ def addsome(request):
                 valid=1
             except:
                 print("Username is wrong")
-            delete_id_file= 'pics/'+data['pic_user_name']+'/'+data['pic_user_name']+"_id"
-            try:
-                shutil.rmtree(delete_id_file)
-                print('Delete id file')
-            except:
-                print("Error when delete id file")
+            
             if pr =='':
                 print('wrong username')
             else:

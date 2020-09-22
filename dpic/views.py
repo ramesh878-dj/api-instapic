@@ -67,7 +67,7 @@ def addsome(request):
                 user_img= '/pics/'+data['pic_user_name']+'/'+myfiles[0]
                 return Response(user_img)
             else:
-                Response("wrong")
+                return Response("wrong")
         else:
             return Response('null')
         return Response(serializer.errors, status=200)
